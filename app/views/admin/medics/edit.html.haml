@@ -1,0 +1,10 @@
+%h1 Editar Medico
+
+= form_for @medic, url: admin_medic_path do |f|
+  - if @medic.errors.any?
+    = flash_message
+
+  = render partial: 'form', locals: { f: f }
+
+= link_to 'Mostrar', admin_medic_path
+= link_to 'Voltar', admin_medics_path
