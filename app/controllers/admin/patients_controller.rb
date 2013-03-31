@@ -1,7 +1,9 @@
 class Admin::PatientsController < Admin::BaseController
 
-  def index
+  before_filter :set_medic
 
+  def index
+    @patients = current_medics.patient.all
   end
 
   def new
@@ -27,5 +29,10 @@ class Admin::PatientsController < Admin::BaseController
   def destroy
 
   end
+
+  private
+
+    def set_medic
+    end
 
 end

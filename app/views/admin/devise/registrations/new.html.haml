@@ -1,0 +1,18 @@
+%h2 Cadastrar
+
+= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
+  = devise_error_messages!
+
+  %div= f.label :name, 'Nome'
+  = f.text_field :name, autofocus: true
+  %div= f.label :email, 'Email'
+  = f.email_field :email
+  %div= f.label :crm, 'CRM'
+  = f.text_field :crm
+  %div= f.label :password, 'Senha'
+  = f.password_field :password
+  %div= f.label :password_confirmation, 'Confirme a senha'
+  = f.password_field :password_confirmation
+  %div= f.submit 'Cadastrar'
+
+= render 'devise/shared/links'

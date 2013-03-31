@@ -1,0 +1,6 @@
+#nav
+  - if medic_signed_in?
+    .logo
+    .user_box
+      = current_medic.name
+      = link_to 'Sair', destroy_medic_session_path, method: 'delete'

@@ -1,0 +1,7 @@
+%tr
+  %td= @medic.name
+  %td= @medic.crm
+  %td= @medic.email
+
+= link_to 'Editar', edit_admin_medic_path(@medic)
+= link_to 'Voltar', admin_medics_path

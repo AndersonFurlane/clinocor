@@ -7,6 +7,8 @@
     = csrf_meta_tags
 
   %body
-
-  = yield
-  = yield :javascript
+    #content
+      = render partial: 'layouts/admin/nav'
+      = render partial: 'layouts/admin/sidebar'
+      = yield
+      = yield :javascript

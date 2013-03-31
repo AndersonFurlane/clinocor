@@ -1,20 +1,16 @@
-%h1 Index Medico
+#medic
 
-%table
-  %tr
-    %th
+  %h1
+    Médicos
+    %span= link_to 'Cadastrar Medico', new_admin_medic_path
+    = link_to 'Voltar', admin_root_path
 
-- @medics.each do |medic|
-  %tr
-    %td= medic.name
-    %td= medic.crm
-    %td= medic.email
-  %tr
-    %td= link_to 'Mostrar', admin_medic_path(medic)
-    %td= link_to 'Editar', edit_admin_medic_path(medic)
-    %td= link_to 'Deletar', admin_medic_path(medic), method: :delete, data: { confirm: 'Are you sure?' }
+  - @medics.each do |medic|
 
-%br
+    %span= "Dr. #{ medic.name }"
+    %span= "Email: #{ medic.email }"
 
-= link_to 'Cadastrar Medico', new_admin_medic_path
-= link_to 'Voltar', root_path
+    .box_button
+      %span= link_to 'Mostrar', admin_medic_path(medic)
+      %span= link_to 'Editar', edit_admin_medic_path(medic)
+      %span= link_to 'Deletar', admin_medic_path(medic), method: :delete, data: { confirm: 'Deseja deletar o médico?' }

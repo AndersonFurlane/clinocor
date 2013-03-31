@@ -1,0 +1,20 @@
+%h1 Index Medico
+
+%table
+  %tr
+    %th
+
+- @medics.each do |medic|
+  %tr
+    %td= medic.name
+    %td= medic.crm
+    %td= medic.email
+  %tr
+    %td= link_to 'Mostrar', admin_medic_path(medic)
+    %td= link_to 'Editar', edit_admin_medic_path(medic)
+    %td= link_to 'Deletar', admin_medic_path(medic), method: :delete, data: { confirm: 'Are you sure?' }
+
+%br
+
+= link_to 'Cadastrar Medico', new_admin_medic_path
+= link_to 'Voltar', root_path

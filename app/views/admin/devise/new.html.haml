@@ -1,0 +1,9 @@
+%h1 Novo Medico
+
+= form_for @medic, url: admin_medics_path do |f|
+  - if @medic.errors.any?
+    = flash_message
+
+  = render partial: 'form', locals: { f: f }
+
+= link_to 'Voltar', admin_medics_path
